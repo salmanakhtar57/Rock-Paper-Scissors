@@ -5,9 +5,12 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
   playerSelection = playerSelection.toLowerCase();
-  choices = ['rock', 'paper', 'scissors']
   computerSelection = computerSelection.toLowerCase();
+
+  choices = ['rock', 'paper', 'scissors']
+  
   if (!choices.includes(playerSelection)) {
     return "Invalid choice! Please choose rock, paper or scissors.";
   } else if (playerSelection === computerSelection) {
