@@ -5,3 +5,17 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice())
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection == computerSelection) {
+    return "Its a tie"
+  } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    return "You win"
+  } else if (playerSelection === "paper" && computerSelection === "rock") {
+    return "You win"
+  } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    return "You win"
+  } else {
+    return "You lose"
+  }
+}
