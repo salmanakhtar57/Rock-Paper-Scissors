@@ -24,31 +24,31 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
+// function game() {
+//   let playerScore = 0;
+//   let computerScore = 0;
 
-  for(let i=0; i<5; i++) {
-    let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
-    let computerSelection = getComputerChoice();
+//   for(let i=0; i<5; i++) {
+//     let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
+//     let computerSelection = getComputerChoice();
     
-    let result = playRound(playerSelection, computerSelection);
-    console.log(result);
+//     let result = playRound(playerSelection, computerSelection);
+//     console.log(result);
 
-    if(result.includes('win')) {
-      playerScore++;
-    } else if (result.includes('lose')) {
-      computerScore++;
-    }
-  }
+//     if(result.includes('win')) {
+//       playerScore++;
+//     } else if (result.includes('lose')) {
+//       computerScore++;
+//     }
+//   }
 
-  if (playerScore > computerScore) {
-    console.log(`Final score: ${playerScore} - ${computerScore}. You win!`);
-  } else if (playerScore < computerScore) {
-    console.log(`Final score: ${playerScore} - ${computerScore}. You lose!`);
-  } else {
-    console.log(`Final score: ${playerScore} - ${computerScore}. It's a draw!`);
-  }
-}
+//   if (playerScore > computerScore) {
+//     console.log(`Final score: ${playerScore} - ${computerScore}. You win!`);
+//   } else if (playerScore < computerScore) {
+//     console.log(`Final score: ${playerScore} - ${computerScore}. You lose!`);
+//   } else {
+//     console.log(`Final score: ${playerScore} - ${computerScore}. It's a draw!`);
+//   }
+// }
 
-game();
+// game();
