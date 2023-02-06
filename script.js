@@ -1,15 +1,32 @@
 const buttons = document.querySelectorAll('button');
-const resultDisplay = document.querySelector('#result');
+const resultMESSAGE = document.querySelector('#result-message');
 const scoreDisplay = document.querySelector('#score');
 
-document.body.appendChild(resultDisplay);
+let playerScore = 0;
+let computerScore = 0;
 
 buttons.forEach((button) => {
   button.addEventListener('click', () =>{
+    if (playerScore == 5 || computerScore == 5) return;
+    
     let playerSelection = button.id;
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
-    resultDisplay.innerHTML = result;
+    resultMESSAGE.innerHTML = result;
+
+    if(result.includes('win')) {
+      playerScore++;
+    } else if (result.includes('lose')) {
+      computerScore++;
+    }
+
+    scoreDisplay.innerHTML = `Player: ${playerScore} - Computer: ${computerScore}`;
+
+    if (playerScore == 5){
+      resultMESSAGE.innerHTML = `Final score: ${playerScore} - ${computerScore}. You win the game!`;
+    } else if (computerScore == 5){
+        resultMESSAGE.innerHTML = `Final score: ${playerScore} - ${computerScore}. You lose the game!`;
+    }
   });
 });
 
@@ -33,59 +50,8 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === "rock"     && computerSelection === "scissors" ||
              playerSelection === "paper"    && computerSelection === "rock" ||
              playerSelection === "scissors" && computerSelection === "paper") {
-    return `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`
+    return `Your Choice "${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}" beats computer Choice "${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}" <br> You win!`
   } else {
-    return `You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`
+    return `Computer Choice "${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}" beats your choice "${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}" <br> You lose`
   }
 }
-
-// function game() {
-//   let playerScore = 0;
-//   let computerScore = 0;
-
-//   let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
-//   let computerSelection = getComputerChoice();
-    
-//   let result = playRound(playerSelection, computerSelection);
-//   console.log(result);
-
-//   if(result.includes('win')) {
-//     playerScore++;
-//   } else if (result.includes('lose')) {
-//     computerScore++;
-//   }
-
-//   console.log(`Final score: ${playerScore} - ${computerScore}`);
-// }
-
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-
-  for(let i=0; i<5; i++) {
-    let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
-    let computerSelection = getComputerChoice();
-    
-    let result = playRound(playerSelection, computerSelection);
-    console.log(result);
-
-    if(result.includes('win')) {
-      playerScore++;
-    } else if (result.includes('lose')) {
-      computerScore++;
-    }
-  }
-
-  if (playerScore > computerScore) {
-    console.log(`Final score: ${playerScore} - ${computerScore}. You win!`);
-  } else if (playerScore < computerScore) {
-    console.log(`Final score: ${playerScore} - ${computerScore}. You lose!`);
-  } else {
-    console.log(`Final score: ${playerScore} - ${computerScore}. It's a draw!`);
-  }
-}
-
-
-
-
-
