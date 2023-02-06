@@ -52,3 +52,27 @@ function playRound(playerSelection, computerSelection) {
 // }
 
 // game();
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
+  let computerSelection = getComputerChoice();
+    
+  let result = playRound(playerSelection, computerSelection);
+  console.log(result);
+
+  if(result.includes('win')) {
+    playerScore++;
+  } else if (result.includes('lose')) {
+    computerScore++;
+  }
+
+  console.log(`Final score: ${playerScore} - ${computerScore}`);
+}
+
+game();
+
+
+
