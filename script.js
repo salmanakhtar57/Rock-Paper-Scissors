@@ -1,5 +1,7 @@
 const buttons = document.querySelectorAll('button');
-const resultDisplay = document.createElement('div');
+const resultDisplay = document.querySelector('#result');
+const scoreDisplay = document.querySelector('#score');
+
 document.body.appendChild(resultDisplay);
 
 buttons.forEach((button) => {
