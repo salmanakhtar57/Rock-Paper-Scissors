@@ -1,8 +1,13 @@
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('button');
+const resultDisplay = document.createElement('div');
+document.body.appendChild(resultDisplay);
 
 buttons.forEach((button) => {
   button.addEventListener('click', () =>{
-    alert(button.id);
+    let playerSelection = button.id;
+    let computerSelection = getComputerChoice();
+    let result = playRound(playerSelection, computerSelection);
+    resultDisplay.innerHTML = result;
   });
 });
 
@@ -30,6 +35,25 @@ function playRound(playerSelection, computerSelection) {
   } else {
     return `You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`
   }
+}
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
+  let computerSelection = getComputerChoice();
+    
+  let result = playRound(playerSelection, computerSelection);
+  console.log(result);
+
+  if(result.includes('win')) {
+    playerScore++;
+  } else if (result.includes('lose')) {
+    computerScore++;
+  }
+
+  console.log(`Final score: ${playerScore} - ${computerScore}`);
 }
 
 // function game() {
@@ -61,26 +85,7 @@ function playRound(playerSelection, computerSelection) {
 
 // game();
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
 
-  let playerSelection = prompt("Choose one: Rock, Paper or Scissors: ").toLowerCase();
-  let computerSelection = getComputerChoice();
-    
-  let result = playRound(playerSelection, computerSelection);
-  console.log(result);
-
-  if(result.includes('win')) {
-    playerScore++;
-  } else if (result.includes('lose')) {
-    computerScore++;
-  }
-
-  console.log(`Final score: ${playerScore} - ${computerScore}`);
-}
-
-game();
 
 
 
