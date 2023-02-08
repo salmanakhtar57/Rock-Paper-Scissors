@@ -3,15 +3,16 @@ body {
 }
 
 .wrapper{
-        border: 5px solid;
-        margin: auto;
-        width: 50%;
-        padding-left: 50%;
-        padding-right: 50%;
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
       }
 
-
-/* #header{
+#header{
     font-size: 70px;
     font-weight: 600;
     background-image: linear-gradient(to left, #553c9a, #b393d3);
@@ -20,5 +21,45 @@ body {
     -webkit-background-clip: text;
     text-align: center;
     background-image: radial-gradient(#553c9a, #ee4b2b);
-    /* radial-gradient(ellipse, #553c9a, #ee4b2b);
-  } */
+}
+
+.button-rps {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-rps:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-rps:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.result .result-message{
+    font-size: 70px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    background-image: radial-gradient(#553c9a, #ee4b2b);
+}
