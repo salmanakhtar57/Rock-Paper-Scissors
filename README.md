@@ -10,9 +10,13 @@ Here are the rules of the game:
 - Paper beats Rock
 - Scissors beat paper.
 
-##Languages Used
+## Languages Used
 
-HTML
-CSS 
-JavaScript
+- HTML
+- CSS 
+- JavaScript
+
+## Project Idea
+
+This project is a part of 'The Odin Project' foundation course on HTML, CSS and JavaScript 
 
