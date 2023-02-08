@@ -1,5 +1,18 @@
 # Rock-Paper-Scissors
-Build a Rock Paper Scissors with HTML, CSS and JavaScript.
+This repository is about Rock Paper Scissors game.
 
+## Description
+Rock Paper Scissors is a fun game, played between two players. Each player picks one option either rock, paper, or scissors. And the one who picks the right option wins. The winner is determined by three simple rules.
 
-This project is under process and not completed yet.
+Here are the rules of the game:
+
+- Rock beats Scissors
+- Paper beats Rock
+- Scissors beat paper.
+
+##Languages Used
+
+HTML
+CSS 
+JavaScript
+
