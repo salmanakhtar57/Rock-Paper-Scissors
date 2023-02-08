@@ -10,6 +10,8 @@ Here are the rules of the game:
 - Paper beats Rock
 - Scissors beat paper.
 
+Here I Implement this game in JavaScript by following the above given rule. This game is played between user and the computer. Both have given number of tries to played the game. The game will finnish when one of the side either computer or player wins 5 matches.
+
 ## Languages Used
 
 - HTML
